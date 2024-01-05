@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url(../images/cursor.png), auto;
+}
+
+@font-face {
+  font-family: SuperFont;
+  src: url(../dist/SuperFont.ttf);
+}
+body {
+  background-color: #15022b;
+  height: 100vh;
+  background-image: url(../images/raffle.PNG);
+  background-position: center;
+  background-size: cover;
+  font-family: SuperFont;
+}
+
+#p_prldr {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #15022b;
+  z-index: 20000;
+}
+
+#p_prldr .svg_anm {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: url(../images/preloader.gif) center center no-repeat;
+  background-size: cover;
+  margin: -16px 0 0 -16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.2);
+}
+.header .logo img {
+  height: 50px;
+  width: 50px;
+}
+
+a {
+  vertical-align: middle;
+  text-decoration: none;
+  color: #d700ff;
+  margin: 0 20px;
+}
+
+.website-links {
+  border: 5px #7300f7 dotted;
+  border-radius: 50px;
+  margin-left: 50px;
+}
+.website-links .links {
+  font-size: 20px;
+  padding: 6px;
+}
+.website-links ul {
+  padding: 10px 0;
+}
+.website-links .community-link {
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+}
+.website-links a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.first-social-link {
+  width: 20px;
+  height: 18px;
+}
+
+.second-social-link {
+  width: 22.5px;
+  height: 18px;
+}
+
+.third-social-link {
+  width: 21px;
+  height: 18px;
+}
+
+li {
+  display: inline;
+}
+
+.maincontent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 370px;
+  width: 100%;
+}
+
+.raffle-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.raffle-logo img {
+  width: 100%;
+}
+
+.missions {
+  margin-top: 50px;
+  color: #7300f7;
+  font-size: 18px;
+}
+
+form {
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  padding-left: 13px;
+  font-size: 17px;
+  font-family: SuperFont;
+  color: #c700ff;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 5px #390375 solid;
+  border-radius: 30px;
+  width: 100%;
+  height: 40px;
+  margin: 0 3px;
+}
+form input:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+form input::placeholder {
+  padding-left: 60px;
+  color: #c700ff;
+}
+
+.send {
+  font-size: 25px;
+  margin-bottom: 10px;
+  width: 130px;
+  font-family: SuperFont;
+  color: #c700ff;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+  border: #390375 5px solid;
+  border-radius: 30px;
+  padding: 15px;
+}
+
+.send:hover {
+  color: #d700ff;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    padding: 15px;
+  }
+  .header .logo img {
+    height: 60px;
+    width: 60px;
+  }
+
+  a {
+    margin: 0 10px;
+    font-size: 25px;
+  }
+
+  .website-links {
+    padding: 0;
+  }
+}
+@media (min-width: 440px) and (max-width: 768px) {
+  .header {
+    padding: 5px;
+  }
+  .header .logo img {
+    height: 40px;
+    width: 40px;
+  }
+
+  a {
+    margin: 0 10px;
+    font-size: 20px;
+  }
+
+  .first-social-link {
+    width: 15px;
+    height: 13.5px;
+  }
+
+  .second-social-link {
+    width: 16.875px;
+    height: 13.5px;
+  }
+
+  .third-social-link {
+    width: 15.75px;
+    height: 13.5px;
+  }
+
+  .website-links {
+    padding: 0;
+  }
+}
+@media (min-width: 375px) and (max-width: 440px) {
+  .header {
+    padding: 5px;
+  }
+  .header .logo img {
+    height: 20px;
+    width: 20px;
+  }
+
+  a {
+    margin: 0 5px;
+  }
+
+  .website-links {
+    border: 3px #7300f7 dotted;
+    margin-left: 15px;
+  }
+  .website-links .links {
+    font-size: 13px;
+    padding: 3px;
+  }
+  .website-links ul {
+    padding: 0;
+  }
+  .website-links .community-link {
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .website-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .first-social-link {
+    width: 15px;
+    height: 13.5px;
+  }
+
+  .second-social-link {
+    width: 16.875px;
+    height: 13.5px;
+  }
+
+  .third-social-link {
+    width: 15.75px;
+    height: 13.5px;
+  }
+
+  .website-links {
+    padding: 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 375px) {
+  .header {
+    padding: 5px;
+  }
+  .header .logo img {
+    height: 20px;
+    width: 20px;
+  }
+
+  a {
+    margin: 0 5px;
+  }
+
+  .website-links {
+    border: 3px #7300f7 dotted;
+    margin-left: 10px;
+  }
+  .website-links .links {
+    font-size: 10px;
+    padding: 3px;
+  }
+  .website-links ul {
+    padding: 0;
+  }
+  .website-links .community-link {
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .website-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .first-social-link {
+    width: 10px;
+    height: 9px;
+  }
+
+  .second-social-link {
+    width: 11.25px;
+    height: 9px;
+  }
+
+  .third-social-link {
+    width: 10.5px;
+    height: 9px;
+  }
+
+  .website-links {
+    padding: 0;
+  }
+}
+@media (max-width: 320px) {
+  .header {
+    padding: 5px;
+  }
+  .header .logo img {
+    height: 20px;
+    width: 20px;
+  }
+
+  a {
+    margin: 0 5px;
+  }
+
+  .website-links {
+    border: 3px #7300f7 dotted;
+    margin-left: 10px;
+  }
+  .website-links .links {
+    font-size: 8px;
+    padding: 3px;
+  }
+  .website-links ul {
+    padding: 0;
+  }
+  .website-links .community-link {
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .website-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .first-social-link {
+    width: 10px;
+    height: 9px;
+  }
+
+  .second-social-link {
+    width: 11.25px;
+    height: 9px;
+  }
+
+  .third-social-link {
+    width: 10.5px;
+    height: 9px;
+  }
+
+  .website-links {
+    padding: 0;
+  }
+}

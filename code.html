@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="dist/code.css">
+    <link rel="icon" href="images/logo.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe</title>
+</head>
+
+<body>
+    <div id="p_prldr"><span class="svg_anm"></span></div>
+
+    <div class="header">
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="images/logo.png" alt="">
+            <div class="website-links">
+                <ul>
+                    <li><a class="roadmap-link links" href="index.html">UNIVERSE</a></li>
+                    <li><a class="community-link links">RAFFLE</a></li>
+                    <li><a class="mint-link links">MINT</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+            <ul>
+                <li><a><img class="first-social-link" src="images/openseaimg.png" alt=""></a></li>
+                <li><a><img class="second-social-link" src="images/discordimg.png" alt=""></a></li>
+                <li><a target="_blank" href="https://twitter.com/Un1verseNFT"><img class="third-social-link"
+                            src="images/twitterimg.png" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+        <div class="maincontent">
+            <div class="raffle-logo">
+                <img src="images/UNIVERSE RAFFLE.PNG" alt="">
+            </div>
+            <p><span id="nameValue"
+                    style="color: #7002fb; font-size: 20px; margin-top: 60px; text-align: center;"></span></p>
+            <p><span id="enterCode"
+                    style="color: #7002fb; font-size: 20px; margin-top: 60px; text-align: center;"></span></p>
+
+            <div class="code" style="display: flex;">
+                <input type="text" onkeyup="jump(this);" maxlength="1" size="1">
+                <input type="text" onkeyup="jump(this);" maxlength="1" size="1">
+                <input type="text" onkeyup="jump(this);" maxlength="1" size="1">
+                <input type="text" onkeyup="jump(this);" maxlength="1" size="1">
+                <input type="text" onkeyup="jump(this);" maxlength="1" size="1">
+                <input type="text" onkeyup="jump(this);" maxlength="1" size="1">
+            </div>
+            <div style="text-align: center;">
+                <button class="confirm" id="confirmButton">
+                    Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/preloader.js"></script>
+    <script type="text/javascript" src="js/twitter.js"></script>
+    <script>
+        function jump(x) {
+            var ml = ~~x.getAttribute('maxlength');
+            if (ml && x.value.length >= ml) {
+                do {
+                    x = x.nextSibling;
+                }
+                while (x && !(/text/.test(x.type)));
+                if (x && /text/.test(x.type)) {
+                    x.focus();
+                }
+            }
+        }
+    </script>
+    <!-- Add this script to fetch data and update HTML elements -->
+    <script>
+        // Fetch data from the backend
+        fetch("http://localhost:3001/api/me", {
+            method: "GET",
+            credentials: "include", // Include credentials for cookie
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("nameValue").innerText = data.data.name
+                document.getElementById("enterCode").innerText = "enter your referral code"
+                const isCode = data.data.referrer;
+                if (isCode){
+                    window.location.href = "http://localhost:5500/missions.html";
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+
+</body>
+
+</html>

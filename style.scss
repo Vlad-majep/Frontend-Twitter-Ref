@@ -1,0 +1,715 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   cursor: url(../images/cursor.png), auto;
+}
+
+:root {
+   --transition: transform 0.75s cubic-bezier(.075, 0.5, 0, 1);
+}
+
+@font-face {
+   font-family: SuperFont;
+   src: url(../dist/SuperFont.ttf);
+}
+
+body {
+   background-color: #15022b;
+   font-family: SuperFont;
+}
+
+#p_prldr{
+   position: fixed;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   left: 0;
+   top: 0;
+   right:0;
+   bottom:0;
+   background: #15022b;
+   z-index: 20000;
+}
+    
+#p_prldr .svg_anm {
+   position: absolute;
+   width: 150px;
+   height: 150px;
+   background: url(../images/preloader.gif) center center no-repeat;
+   background-size: cover;    
+   margin: -16px 0 0 -16px;
+}
+
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: fixed;
+   width: 100%;
+   padding: 15px;
+   z-index: 99;
+   background: rgba(0, 0, 0, 0.2);
+
+   .logo img {
+      height: 50px;
+      width: 50px;
+   }
+}
+
+a {
+   vertical-align: middle;
+   text-decoration: none;
+   color: #d700ff;
+   margin: 0 20px;
+}
+
+.faq-text {
+   color: #b06cff; 
+   font-size: 20px;
+}
+
+.website-links {
+   border: 5px #7300f7 dotted;
+   border-radius: 50px;
+   margin-left: 50px;
+
+   .links {
+      font-size: 20px;
+      padding: 6px;
+   }
+
+   ul {
+      padding: 10px 0;
+   }
+
+   .roadmap-link {
+      border-radius: 50px;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.8);
+   }
+
+   a:hover {
+      color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.first-social-link {
+   width: 20px;
+   height: 18px;
+}
+
+.second-social-link {
+   width: 22.5px;
+   height: 18px;
+}
+
+.third-social-link {
+   width: 21px;
+   height: 18px;
+}
+
+li {
+   display: inline;
+}
+
+.main-header {
+   position: relative;
+}
+
+.layers {
+   height: 100vw;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   position: relative;
+}
+
+.layer {
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   background-size: cover;
+   background-position: center;
+   will-change: transform;
+   transition: var(--transition);
+}
+
+.layers__base {
+   transition: var(--transition);
+   transform: translate3d(0, calc(var(--scrollTop) / 1.5), 0);
+}
+
+.layers__middle {
+   transition: var(--transition);
+   transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.layers__front {
+   transition: var(--transition);
+   transform: translate3d(0, calc(var(--scrollTop) / 30), 0);
+}
+
+.content {
+   will-change: transform;
+}
+ 
+.maincontent {
+   padding: 30px;
+   position: relative;
+   width: 100%;
+   background-color: #15022b;
+   z-index: 98;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   background-image: url(../images/stars.png);
+   background-size: 30%;
+   background-position: center;
+
+   .first-stage, .second-stage, .third-stage {
+      padding: 20px;
+      color: #d700ff;
+      margin: auto;
+      width: 500px;
+      height: 100%;
+      border-radius: 50px;
+      border: 5px #4d00a4 solid;
+      background-color: #15022b;
+      text-align: center;
+      display: flex; 
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+   }
+   
+      .first-stage:hover, .second-stage:hover, .third-stage:hover {
+         border: 5px #fff solid;
+         transition: 0.7s;
+
+         h1, h2 {
+            color: #fff;
+            transition: 0.7s;
+         }
+      }
+ }
+
+.first-stage img {
+   width: 100%;
+}
+
+.second-stage img {
+   width: 100%;
+}
+
+.third-stage img {
+   width: 100%;
+}
+
+.maincontent-info {
+   color: #7300f7;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   padding: 55px 50px;
+}
+
+.info-about-project {
+   background-color: #15022b;
+   border: 5px solid #4d00a4;
+   border-radius: 20px;
+   height: auto;
+   padding: 50px 0;
+   width: 100%;
+   text-align: center;
+}
+
+.FAQ {
+   margin-top: 30px;
+   background-color: #15022b;
+   border: 5px solid #4d00a4;
+   border-radius: 20px;
+   height: auto;
+   padding: 50px;
+   width: auto;
+}
+
+.team {
+   text-align: center;
+   background-color: #15022b;
+   border: 5px solid #4d00a4;
+   border-radius: 25px;
+   height: 230px;
+   width: 230px;
+   margin: 15px;
+}
+
+#first-team {
+   background: url(../images/1team.PNG);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#second-team {
+   background: url(../images/2team.PNG);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#third-team {
+   background: url(../images/3team.PNG);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#fourth-team {
+   background: url(../images/4team.PNG);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#fifth-team {
+   background: url(../images/5team.PNG);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+
+.team:hover {
+   border: 5px solid rgba(255, 255, 255, 1);
+   transition: 0.7s;
+
+   #founder, #cofounder, #artist, #fullstack, #maindeveloper {
+       border: 5px solid rgba(255, 255, 255, 1);
+       transition: 0.7s;
+   }
+}
+
+#founder, #cofounder, #artist, #fullstack, #maindeveloper {
+   background: #3a017a;
+   width: 60%;
+   border-radius: 20px;
+   border: 5px solid #4d00a4;
+   display: relative;
+   margin: auto;
+   margin-top: 208px;
+}
+
+.footer {
+   box-shadow: 60px -16px teal;
+   border-top: 2px solid #b06cff;
+   width: 100%;
+   padding: 30px;
+   background-color: #15022b;
+   color: #7300f7;
+   text-align: center;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+   .header {
+      padding: 15px;
+   
+      .logo img {
+         height: 60px;
+         width: 60px;
+      }
+   }
+
+   a {
+      margin: 0 10px;
+      font-size: 30px;
+   }
+
+   .website-links {
+      padding: 0;
+   }
+
+   .maincontent {
+      font-size: 15px;
+      height: 100%;
+      background-size: 30%;
+
+      .first-stage, .second-stage, .third-stage {
+         padding: 20px;
+         width: 400px;
+         margin: 0 30px;
+         margin-top: 70px;
+      }
+   }
+
+   .info-about-project {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 20px;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   .header {
+      padding: 15px;
+   
+      .logo img {
+         height: 60px;
+         width: 60px;
+      }
+   }
+
+   a {
+      margin: 0 10px;
+      font-size: 25px;
+   }
+
+   .website-links {
+      padding: 0;
+   }
+
+   .maincontent {
+      font-size: 15px;
+      background-size: 70%;
+      height: 100%;
+
+      .first-stage, .second-stage, .third-stage {
+         padding: 20px;
+         width: 600px;
+         margin: 0 30px;
+         margin-top: 70px;
+      }
+   }
+
+   .info-about-project {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+   }
+
+   .maincontent-info {
+      padding: 15px 15px;
+   }
+}
+
+@media (min-width: 440px) and (max-width: 768px) {
+   .header {
+      padding: 5px;
+   
+      .logo img {
+         height: 40px;
+         width: 40px;
+      }
+   }
+
+   a {
+      margin: 0 10px;
+      font-size: 20px;
+   }
+
+   .first-social-link {
+      width: 15px;
+      height: 13.5px;
+   }
+   
+   .second-social-link {
+      width: 16.875px;
+      height: 13.5px;
+   }
+   
+   .third-social-link {
+      width: 15.75px;
+      height: 13.5px;
+   }
+
+   .website-links {
+      padding: 0;
+   }
+
+   .maincontent {
+      font-size: 15px;
+      height: 100%;
+      background-size: 100%;
+
+      .first-stage, .second-stage, .third-stage {
+         padding: 20px;
+         width: 600px;
+         margin: 20px 0;
+      }
+   }
+
+   .info-about-project {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+   }
+
+   .maincontent-info {
+      padding: 15px 15px;
+   }
+}
+
+@media (min-width: 375px) and (max-width: 440px) {
+   .header {
+      padding: 5px;
+   
+      .logo img {
+         height: 20px;
+         width: 20px;
+      }
+   }
+
+   a {
+      margin: 0 5px;
+   }
+
+   .website-links {
+      border: 3px #7300f7 dotted;
+      margin-left: 15px;
+   
+      .links {
+         font-size: 13px;
+         padding: 3px;
+      }
+   
+      ul {
+         padding: 0;
+      }
+   
+      .roadmap-link {
+         border-radius: 50px;
+         background-color: rgba(255, 255, 255, 0.5);
+         color: rgba(255, 255, 255, 0.8);
+      }
+   
+      a:hover {
+         color: rgba(255, 255, 255, 0.8);
+     }
+   }
+
+   .first-social-link {
+      width: 15px;
+      height: 13.5px;
+   }
+   
+   .second-social-link {
+      width: 16.875px;
+      height: 13.5px;
+   }
+   
+   .third-social-link {
+      width: 15.75px;
+      height: 13.5px;
+   }
+
+   .website-links {
+      padding: 0;
+   }
+
+   .maincontent {
+      font-size: 10px;
+      height: 100%;
+      background-size: 100%;
+
+      .first-stage, .second-stage, .third-stage {
+         padding: 20px;
+         width: 300px;
+         margin: 20px 0;
+      }
+   }
+
+   .info-about-project {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 10px;
+   }
+
+   .maincontent-info {
+      padding: 15px 15px;
+   }
+}
+
+
+@media (min-width: 320px) and (max-width: 375px) {
+   .header {
+      padding: 5px;
+   
+      .logo img {
+         height: 20px;
+         width: 20px;
+      }
+   }
+
+   a {
+      margin: 0 5px;
+   }
+
+   .website-links {
+      border: 3px #7300f7 dotted;
+      margin-left: 10px;
+   
+      .links {
+         font-size: 10px;
+         padding: 3px;
+      }
+   
+      ul {
+         padding: 0;
+      }
+   
+      .roadmap-link {
+         border-radius: 50px;
+         background-color: rgba(255, 255, 255, 0.5);
+         color: rgba(255, 255, 255, 0.8);
+      }
+   
+      a:hover {
+         color: rgba(255, 255, 255, 0.8);
+     }
+   }
+
+   .first-social-link {
+      width: 10px;
+      height: 9px;
+   }
+   
+   .second-social-link {
+      width: 11.25px;
+      height: 9px;
+   }
+   
+   .third-social-link {
+      width: 10.5px;
+      height: 9px;
+   }
+
+   .faq-text{
+      font-size: 15px;
+   }
+
+   .website-links {
+      padding: 0;
+   }
+
+   .maincontent {
+      font-size: 10px;
+      height: 100%;
+      background-size: 100%;
+
+      .first-stage, .second-stage, .third-stage {
+         padding: 20px;
+         width: 300px;
+         margin: 20px 0;
+      }
+   }
+
+
+   .info-about-project {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 10px;
+   }
+
+   .maincontent-info {
+      padding: 15px 15px;
+   }
+}
+
+@media (max-width: 320px) {
+   .header {
+      padding: 5px;
+   
+      .logo img {
+         height: 20px;
+         width: 20px;
+      }
+   }
+
+   .first-social-link {
+      width: 10px;
+      height: 9px;
+   }
+   
+   .second-social-link {
+      width: 11.25px;
+      height: 9px;
+   }
+   
+   .third-social-link {
+      width: 10.5px;
+      height: 9px;
+   }
+
+   a {
+      margin: 0 5px;
+   }
+
+   .faq-text{
+      font-size: 13px;
+   }
+
+   .website-links {
+      border: 3px #7300f7 dotted;
+      margin-left: 10px;
+   
+      .links {
+         font-size: 8px;
+         padding: 3px;
+      }
+   
+      ul {
+         padding: 0;
+      }
+   
+      .roadmap-link {
+         border-radius: 50px;
+         background-color: rgba(255, 255, 255, 0.5);
+         color: rgba(255, 255, 255, 0.8);
+      }
+   
+      a:hover {
+         color: rgba(255, 255, 255, 0.8);
+     }
+   }
+
+   .maincontent {
+      font-size: 10px;
+      height: 100%;
+
+      .first-stage, .second-stage, .third-stage {
+         padding: 20px;
+         width: 300px;
+         margin: 20px 0;
+      }
+   }
+
+   .info-about-project {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 10px;
+   }
+
+   .maincontent-info {
+      padding: 15px 15px;
+   }
+}

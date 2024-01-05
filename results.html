@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="dist/results.css">
+    <link rel="icon" href="images/logo.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe</title>
+</head>
+
+<body>
+    <div id="p_prldr"><span class="svg_anm"></span></div>
+
+    <div class="header">
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="images/logo.png" alt="">
+            <div class="website-links">
+                <ul>
+                    <li><a class="roadmap-link links" href="index.html">UNIVERSE</a></li>
+                    <li><a class="community-link links">RAFFLE</a></li>
+                    <li><a class="mint-link links">MINT</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+            <ul>
+                <li><a><img class="first-social-link" src="images/openseaimg.png" alt=""></a></li>
+                <li><a><img class="second-social-link" src="images/discordimg.png" alt=""></a></li>
+                <li><a target="_blank" href="https://twitter.com/Un1verseNFT"><img class="third-social-link"
+                            src="images/twitterimg.png" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 90vh;">
+        <div class="maincontent">
+            <div class="raffle-logo">
+                <img src="images/UNIVERSE RAFFLE.PNG" alt="">
+            </div>
+            <p></p>
+            <div class="results">
+                <p><span id="nameValue" style="color: #d700ff;"></span>, your referral code : <span id="referralCodeValue" style="color: #d700ff;"></span></p>
+                <br><br>
+                <p>number of people you've invited : <span id="numberOfInvitesValue" style="color: #d700ff;"></span> <br><br><br></p>
+                <div id="chancesMessage" style="border: 5px solid #7300f7; padding: 20px; border-radius: 30px; color: white;">
+                    number of people you invite increases your chances of winning
+                </div>
+                <button class="tweet" onclick="handleTweetCode()">
+                    tweet your code
+                </button>
+            </div>
+            
+        </div>
+    </div>
+    <script type="text/javascript" src="js/code.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/preloader.js"></script>
+    <!-- Add this script to fetch data and update HTML elements -->
+    <script>
+        // Fetch data from the backend
+        fetch("http://localhost:3001/api/me", {
+            method: "GET",
+            credentials: "include", // Include credentials for cookie
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Update HTML elements with fetched data
+                document.getElementById("referralCodeValue").innerText = data.data.referralCode;
+                document.getElementById("numberOfInvitesValue").innerText = data.data.points;
+                document.getElementById("nameValue").innerText = data.data.name
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+</body>
+
+</html>
