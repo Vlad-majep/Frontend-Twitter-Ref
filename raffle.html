@@ -73,14 +73,11 @@
 
         $(document).ready(function () {
 
-            // Функция для получения параметров из URL
             function getURLParameter(name) {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get(name);
             }
 
-
-            // Проверяем наличие куки jwt
             const jwtCookie = document.cookie.split('; ').find(row => row.startsWith('jwt='));
             console.log("jwt", jwtCookie);
             
@@ -88,12 +85,10 @@
 
                 fetch("http://localhost:3001/api/me", {
                     method: "GET",
-                    credentials: "include", // Добавляем credentials: "include" для передачи куки
+                    credentials: "include",
                 })
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data);
-                        // Если запрос успешен, перенаправляем пользователя на страницу авторизации Twitter
                         if (data.data) {
                             const isCode = data.data.referrer;
                             const isWallet = data.data.wallet;
@@ -106,12 +101,10 @@
                                 window.location.href = "http://localhost:5500/results.html";
                             }
                         } else {
-                            // Обработка ошибки при необходимости
                             console.error("Ошибка аутентификации в Twitter");
                         }
                     })
                     .catch(error => {
-                        // Обработка ошибки при необходимости
                         console.error('Error:', error);
                     });
 
@@ -119,12 +112,10 @@
                 const oauthToken = localStorage.getItem('oauthToken');
                 const oauthSecret = localStorage.getItem('oauthSecret');
 
-                // Получаем новый код верификации, например, из параметров URL
                 const verifier = getURLParameter('oauth_verifier');
 
-                // Проверяем наличие oauthToken и oauthSecret
                 if (oauthToken && oauthSecret) {
-                    // Отправляем данные на сервер
+
                     fetch('http://localhost:3001/api/settwitter', {
                         method: 'POST',
                         headers: {
@@ -154,7 +145,6 @@
                         })
                         .catch(error => {
                             console.error('Error:', error);
-                            // Здесь вы можете добавить логику обработки ошибки, например, показ сообщения об ошибке.
                         });
                 } else {
                     console.error('Missing oauthToken or oauthSecret');

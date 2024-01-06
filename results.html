@@ -57,19 +57,17 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/preloader.js"></script>
-    <!-- Add this script to fetch data and update HTML elements -->
     <script>
         // Fetch data from the backend
         fetch("http://localhost:3001/api/me", {
             method: "GET",
-            credentials: "include", // Include credentials for cookie
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
             },
         })
             .then(response => response.json())
             .then(data => {
-                // Update HTML elements with fetched data
                 document.getElementById("referralCodeValue").innerText = data.data.referralCode;
                 document.getElementById("numberOfInvitesValue").innerText = data.data.points;
                 document.getElementById("nameValue").innerText = data.data.name
