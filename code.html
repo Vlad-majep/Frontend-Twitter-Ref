@@ -79,7 +79,7 @@
     <!-- Add this script to fetch data and update HTML elements -->
     <script>
         // Fetch data from the backend
-        fetch("http://localhost:3001/api/me", {
+        fetch("http://playuniverse.xyz/api/me", {
             method: "GET",
             credentials: "include", // Include credentials for cookie
             headers: {
@@ -92,7 +92,7 @@
                 document.getElementById("enterCode").innerText = "enter your referral code"
                 const isCode = data.data.referrer;
                 if (isCode){
-                    window.location.href = "http://localhost:5500/missions.html";
+                    window.location.href = "http://playuniverse.xyz/missions.html";
                 }
             })
             .catch(error => {

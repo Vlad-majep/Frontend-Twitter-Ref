@@ -1,5 +1,5 @@
 const handleTweetCode = () => {
-    fetch("http://localhost:3001/api/me", {
+    fetch("http://playuniverse.xyz/api/me", {
         method: "GET",
         credentials: "include",
         headers: {

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("loginButton").addEventListener("click", function () {
         
-        fetch("http://localhost:3001/api/gettwiterlink", {
+        fetch("http://playuniverse.xyz/api/gettwiterlink", {
             method: "GET",
             credentials: "include"
         })
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         confirmButton.addEventListener("click", function () {
         const codeInput = Array.from(document.querySelectorAll('.code input')).map(input => input.value).join('');
 
-        fetch("http://localhost:3001/api/addreferralcode", {
+        fetch("http://playuniverse.xyz/api/addreferralcode", {
             method: "POST",
             credentials: "include",
             headers: {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.message === 'Referral code added successfully.') {
                 alert('Referral code added successfully.');
-                window.location.href = "http://localhost:5500/missions.html";
+                window.location.href = "http://playuniverse.xyz/missions.html";
             } else {
                 alert('Error adding referral code: ' + response.message);
             }

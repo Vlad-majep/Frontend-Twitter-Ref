@@ -83,7 +83,7 @@
             
             if (jwtCookie) {
 
-                fetch("http://localhost:3001/api/me", {
+                fetch("http://playuniverse.xyz/api/me", {
                     method: "GET",
                     credentials: "include",
                 })
@@ -93,12 +93,12 @@
                             const isCode = data.data.referrer;
                             const isWallet = data.data.wallet;
                             if (isCode) {
-                                window.location.href = "http://localhost:5500/missions.html";
+                                window.location.href = "http://playuniverse.xyz/missions.html";
                             } else {
-                                window.location.href = "http://localhost:5500/code.html";
+                                window.location.href = "http://playuniverse.xyz/code.html";
                             }
                             if (isWallet) {
-                                window.location.href = "http://localhost:5500/results.html";
+                                window.location.href = "http://playuniverse.xyz/results.html";
                             }
                         } else {
                             console.error("Ошибка аутентификации в Twitter");
@@ -116,7 +116,7 @@
 
                 if (oauthToken && oauthSecret) {
 
-                    fetch('http://localhost:3001/api/settwitter', {
+                    fetch('http://playuniverse.xyz/api/settwitter', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -141,7 +141,7 @@
                             await localStorage.removeItem('oauthToken');
                             await localStorage.removeItem('oauthSecret');
                             console.log('After removal:', localStorage.getItem('oauthToken'), localStorage.getItem('oauthSecret'));
-                            window.location.href = "http://localhost:5500/code.html";
+                            window.location.href = "http://playuniverse.xyz/code.html";
                         })
                         .catch(error => {
                             console.error('Error:', error);
