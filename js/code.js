@@ -1,10 +1,11 @@
 const handleTweetCode = () => {
-    fetch("http://playuniverse.xyz/api/me", {
+    fetch("https://playuniverse.xyz/api/me", {
         method: "GET",
         credentials: "include",
         headers: {
-            "Content-Type": "application/json",
-        },
+            origin: "https://playuniverse.xyz",
+            'Content-Type': 'application/json',
+          },
     })
         .then(response => response.json())
         .then(data => {

@@ -61,12 +61,13 @@
 
             var walletValue = document.getElementsByName('wallet')[0].value;
 
-            fetch("http://playuniverse.xyz/api/addwallet", {
+            fetch("https://playuniverse.xyz/api/addwallet", {
                 method: "POST",
                 credentials: "include",
                 headers: {
-                    "Content-Type": "application/json",
-                },
+                origin: "https://playuniverse.xyz",
+                'Content-Type': 'application/json',
+              },
                 body: JSON.stringify({
                     wallet: walletValue,
                 }),
@@ -75,7 +76,7 @@
                 .then(response => {
                     if (response.message === 'Referral code added successfully.') {
                         alert('Referral code added successfully.');
-                        window.location.href = "http://playuniverse.xyz/results.html";
+                        window.location.href = "https://playuniverse.xyz/results.html";
                     } else {
                         alert('Error adding referral code: ' + response.message);
                     }
